@@ -1,0 +1,22 @@
+.stage{
+    background-color: #f5f7fa;
+}
+.stageName{
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+.state{
+    background-color: red;
+}
+.item{
+    background-color: red;
+}
+.SearchInput{
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: #0dcaf0;
+    outline: none;
+    margin: 0px 10px;
+    padding: 0px 5px;;
+}

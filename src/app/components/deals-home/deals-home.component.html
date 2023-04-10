@@ -1,0 +1,46 @@
+<!-- ====> Search section   -->
+<div class="row  justify-content-center my-5  ">
+    <select [(ngModel)]="selectedStage" (change)="filterData(selectedStage)" class="SearchInput  col-sm-5 col-md-2 p-1">
+        <option value="All Stages" selected>All Stages</option>
+        <option value="Potential Value">Potential Value</option>
+        <option value="Focus">Focus</option>
+        <option value="Contact Made">Contact Made</option>
+        <option value="Offer Sent">Offer Sent</option>
+        <option value="Getting Ready">Getting Ready</option>
+    </select>
+    <input type="text" class="SearchInput col-sm-5 col-md-2  " placeholder="Search here ... " [(ngModel)]="searchTerm" />
+</div>
+
+<!--====>Deals Section   -->
+<div class="row justify-content-center" cdkDropListGroup  >
+    <div *ngFor="let stage of filteredStage " class="col-sm-10 col-md-5 col-lg-2 m-1 stage" >
+        <p class="stageName">{{stage}}</p>
+        <div [ngSwitch]="stage"   >
+
+            <!-- for Deals in Potential Value stage -->
+            <div *ngSwitchCase="'Potential Value'"  cdkDropList (cdkDropListDropped)="onDrop($event)" [cdkDropListData]="potentialValueDeals" > 
+                <app-deal-item *ngFor="let deal of potentialValueDeals | filter:searchTerm"  [dealItem]="deal" cdkDrag></app-deal-item>
+            </div>
+
+            <!-- for Deals in Focus stage -->
+            <div *ngSwitchCase="'Focus'"  cdkDropList (cdkDropListDropped)="onDrop($event)" [cdkDropListData]="focusDeals">
+                <app-deal-item *ngFor="let deal of focusDeals | filter:searchTerm"  [dealItem]="deal" cdkDrag></app-deal-item>
+            </div>
+
+            <!-- for Deals in Contact Made stage -->
+            <div *ngSwitchCase="'Contact Made'" cdkDropList (cdkDropListDropped)="onDrop($event)" [cdkDropListData]="contactMadeDeals">
+                <app-deal-item *ngFor="let deal of contactMadeDeals | filter:searchTerm"  [dealItem]="deal" cdkDrag></app-deal-item>
+            </div>
+            
+            <!-- for Deals in Offer Sent stage -->
+            <div *ngSwitchCase="'Offer Sent'" cdkDropList (cdkDropListDropped)="onDrop($event)" [cdkDropListData]="offerSentDeals">
+                <app-deal-item *ngFor="let deal of offerSentDeals | filter:searchTerm"  [dealItem]="deal" cdkDrag></app-deal-item>
+            </div>
+
+            <!-- for Deals in Getting Ready stage -->
+            <div cdkDropList *ngSwitchCase="'Getting Ready'" cdkDropList (cdkDropListDropped)="onDrop($event)" [cdkDropListData]="gettingReadyDeals">
+                <app-deal-item *ngFor="let deal of gettingReadyDeals | filter:searchTerm"  [dealItem]="deal" cdkDrag></app-deal-item>
+            </div>
+        </div>
+    </div>
+</div>

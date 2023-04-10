@@ -1,0 +1,14 @@
+.dealDetails{
+   color: grey;
+   font-size: 14px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+.dealName{
+    font-weight: 400;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

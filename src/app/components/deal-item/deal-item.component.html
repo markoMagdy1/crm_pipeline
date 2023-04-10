@@ -1,0 +1,17 @@
+<!--  card for the Deal -->
+<div class="card my-2" >
+    <div class="card-body">
+      <div class="row">
+      <span class="dealName col-10 fs-5 mb-2"> {{dealItem.first_name}} {{dealItem.last_name}} </span>
+        <span class="btn btn-secondary m-1 col-7">{{dealItem.state}} </span>
+        <span class="btn btn-info alert-heading my-1 col-4">{{dealItem.probability_status}} </span>
+      </div>
+      <div class="row">
+        <span class="dealDetails col-10 my-1"> <i class="fa-solid fa-building"></i>   {{dealItem.company}} </span>
+        <span class="dealDetails col-10 my-1"> <i class="fa-solid fa-phone "></i>  {{dealItem.phone}} </span>
+        <span class="dealDetails col-10 my-1"> <i class="fa-sharp fa-regular fa-calendar"></i>  {{dealItem.date}} </span>
+      </div>
+
+    </div>
+  </div>
+
