@@ -52,6 +52,7 @@ export class DealsHomeComponent implements OnInit {
   gettingReadyDeals: any = [];
 
   onDrop(event: CdkDragDrop<string[]>) {
+    console.log(event)
     if (event.previousContainer === event.container) {
       // Item moved within the same list
       moveItemInArray(
@@ -92,4 +93,5 @@ export class DealsHomeComponent implements OnInit {
       }
     });
   };
-}
+     
+  }
