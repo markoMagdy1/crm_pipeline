@@ -70,7 +70,7 @@ export class DealsHomeComponent implements OnInit {
       );
     }
   }
-    
+  
   //===> division deals according to its status
   divisionDeals = () => {
     this.allDeals.map((deal: any) => {
